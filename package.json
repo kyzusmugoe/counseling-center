@@ -1,0 +1,74 @@
+{
+    "path": "./",
+    "name": "tongluokiln",
+    "version": "1.0.0",
+    "description": "orange second generation",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack serve --mode=development",
+        "build": "webpack --mode=production"
+    },
+    "author": "wade chen",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.20.7",
+        "@babel/plugin-proposal-decorators": "^7.20.7",
+        "@babel/preset-env": "^7.20.2",
+        "@babel/preset-typescript": "^7.18.6",
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "@fortawesome/fontawesome-svg-core": "^1.3.0",
+        "@fortawesome/free-brands-svg-icons": "^5.15.4",
+        "@fortawesome/free-regular-svg-icons": "^5.15.4",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
+        "@types/photoswipe": "^4.1.2",
+        "acron": "^1.0.5",
+        "babel-loader": "^8.3.0",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^9.1.0",
+        "css-loader": "^6.7.3",
+        "css-minimizer-webpack-plugin": "^3.4.1",
+        "html-loader": "^3.1.2",
+        "html-minimizer-webpack-plugin": "^3.5.0",
+        "html-webpack-plugin": "^5.5.0",
+        "html-webpack-pug-plugin": "^4.0.0",
+        "imagemin-webp-webpack-plugin": "^3.3.6",
+        "mini-css-extract-plugin": "^2.7.2",
+        "pug-html-loader": "^1.1.5",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.57.1",
+        "sass-loader": "^12.6.0",
+        "template-ejs-loader": "^0.7.0",
+        "terser-webpack-plugin": "^5.3.6",
+        "ts-loader": "^9.4.2",
+        "typescript": "^4.9.4",
+        "webpack": "^5.75.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.11.1"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free-brands": "^5.0.13",
+        "@fortawesome/fontawesome-free-regular": "^5.0.13",
+        "@fortawesome/fontawesome-free-solid": "^5.0.13",
+        "@popperjs/core": "^2.11.2",
+        "@types/bootstrap": "^5.1.9",
+        "acorn": "^8.7.0",
+        "bootstrap": "^5.1.3",
+        "file-loader": "^6.2.0",
+        "flatpickr": "^4.6.9",
+        "photoswipe": "^4.1.3",
+        "pug": "^3.0.2",
+        "style-loader": "^3.1.0",
+        "swiper": "^7.4.1"
+    },
+    "babel": {
+        "plugins": [
+            [
+                "@babel/plugin-proposal-decorators",
+                {
+                    "legacy": true
+                }
+            ]
+        ]
+    }
+}

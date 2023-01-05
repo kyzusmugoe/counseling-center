@@ -3,30 +3,31 @@ div.nav
         a(href="./index.html") 
             img.logo(src="./images/logo.png")
     div.right
-        //------------------------------------
-        if page=="about"
-            a.on(href="./about.html") 關於新設計
-        else
-            a(href="./about.html") 關於新設計
-        //------------------------------------
-        if page=="group"
-            a.on(href="./group.html") 專業團隊
-        else
-            a(href="./group.html") 專業團隊
-        //------------------------------------
-        if page=="service"
-            a.on(href="./service.html") 服務項目
-        else
-            a(href="./service.html") 服務項目
-        //------------------------------------
-        if page=="artical"
-            a.on(href="./artical.html") 文章專欄
-        else
-            a(href="./artical.html") 文章專欄
-        //------------------------------------
-        if page=="contactus"
-            a.on(href="./contactus.html") 聯絡我們
-        else
-            a(href="./contactus.html") 聯絡我們
-        //------------------------------------
-        a 線上預約
+        div.menu
+            //------------------------------------
+            if page=="about"
+                a.on(href="./about.html") 關於新設計
+            else
+                a(href="./about.html") 關於新設計
+            //------------------------------------
+            if page=="team"
+                a.on(href="./team.html") 專業團隊
+            else
+                a(href="./team.html") 專業團隊
+            //------------------------------------
+            if page=="service"
+                a.on(href="./service.html") 服務項目
+            else
+                a(href="./service.html") 服務項目
+            //------------------------------------
+            if page=="column"
+                a.on(href="./column.html") 文章專欄
+            else
+                a(href="./column.html") 文章專欄
+            //------------------------------------
+            if page=="contactus"
+                a.on(href="./contactus.html") 聯絡我們
+            else
+                a(href="./contactus.html") 聯絡我們
+            //------------------------------------
+            a.btn 線上預約

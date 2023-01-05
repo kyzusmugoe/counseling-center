@@ -1,24 +1,56 @@
 //@use "sass:math"
+@mixin underline()
+    content:''
+    position: absolute
+    width: calc(100% - 36px)
+    height: 4px
+    left:18px
+    bottom:0
+    border-radius: 5px
+    background-color: #D2076F
+
 @mixin nav()
     .nav
         height:210px
         display: flex
         justify-content: space-between
-        align-items: flex-end
+        align-items: center
 
         .left
-            padding:0 20px 30px 20px
-        .right
-            padding:0 20px 60px 20px
-        .left
+            flex:0 1 auto
+            padding: 0px 20px 0px 20px
             .logo
-                width: 395px
-                height: 130px
-            
-        a
-            font-size: 24px
-            color:#333
-            text-decoration: none
-            padding:10px
-        .on
-            color:#f00
+                width:100%
+                max-width: 395px
+                object-fit: cover
+        .right
+            flex:0 0 auto
+            padding: 24px 20px 0px 20px
+            @media screen and (max-width:1400px) 
+                padding-bottom: 0px
+            .menu
+                @media screen and (max-width:768px) 
+                    display: none
+                a
+                    font-size: 24px
+                    @media screen and (max-width:1400px) 
+                        font-size: 21px
+                    color:#333
+                    text-decoration: none
+                    padding:10px 18px
+                    position: relative
+                    &:hover
+                        transition: .4s
+                        color:#D2076F
+                        //@include underline()
+                        
+                    &.on::after
+                        @include underline()
+
+                    &.btn
+                        color:#fff
+                        background-color: #DDA869
+                        border-radius: 30px
+                        
+                        padding:10px 24px
+                        margin-left: 20px

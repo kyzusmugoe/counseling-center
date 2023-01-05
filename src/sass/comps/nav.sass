@@ -1,7 +1,22 @@
 //@use "sass:math"
 @mixin nav()
     .nav
+        height:210px
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+
+        .left
+            padding:0 20px 30px 20px
+        .right
+            padding:0 20px 60px 20px
+        .left
+            .logo
+                width: 395px
+                height: 130px
+            
         a
+            font-size: 24px
             color:#333
             text-decoration: none
             padding:10px

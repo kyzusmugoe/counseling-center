@@ -138,9 +138,9 @@ module.exports = (env, options) => {
             new webpack.HotModuleReplacementPlugin(),
             new HtmlWebpackPlugin({ filename: 'index.html',     title: "wade", template: 'src/pug/index.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'about.html',     title: "wade", template: 'src/pug/about.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            new HtmlWebpackPlugin({ filename: 'group.html',     title: "wade", template: 'src/pug/group.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
+            new HtmlWebpackPlugin({ filename: 'team.html',     title: "wade", template: 'src/pug/team.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'service.html',   title: "wade", template: 'src/pug/service.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            new HtmlWebpackPlugin({ filename: 'artical.html',   title: "wade", template: 'src/pug/artical.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
+            new HtmlWebpackPlugin({ filename: 'column.html',   title: "wade", template: 'src/pug/column.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'contactus.html', title: "wade", template: 'src/pug/contactus.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
            
             new MiniCssExtractPlugin({

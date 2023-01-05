@@ -1,0 +1,48 @@
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700&display=swap&subset=chinese-traditional'
+@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+TC:wght@300&display=swap'
+
+
+@import './comps/nav'
+@import './comps/banner'
+@import './comps/footer'
+@import './pages/index'
+@import './pages/about'
+@import './pages/team'
+@import './pages/service'
+@import './pages/column'
+@import './pages/contactus'
+    
+
+html, body
+    font-family: 'Noto Sans TC', sans-serif
+    margin: 0
+    height: 100%
+
+.main-container
+    
+    width: 100%
+    max-width: 1600px
+    height: fit-content
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    box-shadow: 0 0 3px #aaa
+    .block
+        display: flex
+        justify-content: center
+        width: calc(100% - 160px)
+        padding: 0 80px
+        &.y1
+            background-color: rgba(211,168,105,0.12) 
+    
+    //comps
+    @include nav()
+    @include banner()
+    @include footer()
+    //pages
+    @include index()
+    @include about()
+    @include team()
+    @include service()
+    @include column()
+    @include contactus()

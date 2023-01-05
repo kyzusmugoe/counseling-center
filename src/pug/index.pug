@@ -5,8 +5,29 @@ doctype html
 html
     include ./comps/header.pug
     body
-        div
+        div.main-container            
             +nav()
-        div
-        include ./comps/banner.pug
-        div.blocker hi
+            div.page-index
+                include ./comps/banner.pug
+                div.block 
+                    div.title 
+                        span.sub Latest News
+                        span 最新消息
+                div.block.y1
+                    div.title 
+                        span.sub RESERVATION PROCESS
+                        span 預約流程
+                div.block 
+                    div.title 
+                        span.sub OUR TEAM
+                        span 專業團隊
+                div.block.y1
+                    div.title 
+                        span.sub COLUMN
+                        span 文章專欄
+                div.block
+                    div.title 
+                        span.sub CONTACT US
+                        span 聯絡我們
+            include ./comps/footer.pug 
+                    

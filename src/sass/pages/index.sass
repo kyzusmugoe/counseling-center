@@ -1,7 +1,13 @@
 //@use "sass:math"
+@mixin processingLine()
+    content: url('./images/processing.svg')
+    position: absolute
+    width:210px
+    height: 76px
 @mixin index()
     .page-index
-        .title
+        width: 100%
+        .blocktitle
             font-size: 50px
             padding:80px 0 
             display: flex
@@ -10,5 +16,36 @@
             .sub
                 font-family: 'Lato', sans-serif
                 font-weight: 400
-                color: #DDA869d
+                color: $mainColor
                 font-size: 24px
+
+        .newsBox
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            .news
+                display: flex
+                padding-bottom: 40px 
+                margin-bottom: 20px 
+                width: 100%
+                max-width: 1400px
+                border-bottom: 3px dotted #eee
+                .time
+                    white-space: nowrap
+                    padding:0 60px
+                    font-size: 30px
+                    color: $mainColor
+                .txt
+                    font-weight: 300
+                    font-size: 24px
+                    color: $fontColor
+                    line-height: 40px
+        
+        .contactBox
+            display: flex            
+            > div
+                flex: 0 0 50%
+                            
+            
+            

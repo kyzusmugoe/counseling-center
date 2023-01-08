@@ -1,4 +1,13 @@
+//-公用組件
+include ./comps/components.pug
 doctype html
 html
     include ./comps/header.pug
-    div.blocker hi
+    body
+        div.main-container            
+            +nav('team')
+            div.team
+                +banner('./images/banner-1.jpg') 
+                div.block               
+                    +team()
+            include ./comps/footer.pug 

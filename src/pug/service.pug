@@ -1,4 +1,12 @@
+//-公用組件
+include ./comps/components.pug
 doctype html
 html
     include ./comps/header.pug
-    div.blocker hi
+    body
+        div.main-container            
+            +nav('service')
+            div.page-index
+                +banner('./images/banner-1.jpg')
+                +process()
+            include ./comps/footer.pug 

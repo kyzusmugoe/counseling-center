@@ -1,3 +1,183 @@
+//-選單列表()
+mixin banner(path)
+	div.banner-container
+		div.bannerBox.PS(data-speed=.5 data-distance=50)
+			div.banner(style=`background-image:url(${path})`)
+		div.txt
+			img(src="./images/main-txt.svg" loading='lazy')
+              
 //-選單列表(顯示頁面)
 mixin nav(page)
-  include ./nav.pug 
+	include ./nav.pug 
+
+//-首頁區塊標題
+mixin title(main, sub)
+	div.blocktitle 
+		span.sub=sub
+		span=main
+
+//-預約流程
+mixin process()
+	div.rpBox
+		div.rpCard 
+			div
+				img(src='./images/rp-icon-1.png')
+			div.tilte 預約諮商
+			div.txt 
+				ul
+					li 線上填寫預約表單
+					li 加官方line@安排初談時間
+		div.rpCard
+			div
+				img(src='./images/rp-icon-2.png')
+			div.tilte 初談評估
+			div.txt 
+				ul
+					li 了解－來談議題與期待需求
+					li 提供－整體狀態評估
+					li 說明－諮商進行方式
+		div.rpCard
+			div
+				img(src='./images/rp-icon-3.png')
+			div.tilte 媒合心理師
+			div.txt 
+				ul
+					li 安排合適心理師
+					li 確認時間與形式
+		div.rpCard
+			div
+				img(src='./images/rp-icon-4.png')
+			div.tilte 開始諮商
+			div.txt 
+				ul
+					li 開始心設計諮商旅程。
+            
+//-專業團隊
+mixin team()
+	div.teamBox
+		a.member(href="./member.html")
+			div.pic
+				img(src='./images/何維峰.jpg') 
+			div.title
+				span 何維峰
+				span.sub 心設計心理所長
+			div.txt
+				| 相信
+				br 
+				| 人有幸福設計的本能，
+				br 
+				| 期盼能透過諮商的專業陪伴，
+				br 
+				| 整理與再理解個人的關係與情緒，
+				br 
+				| 設計出自己想要的幸福心生活，
+				br 
+				| 完成每個人專屬的心設計，
+				br 
+				| 實踐
+				br 
+				| 一份有溫度，如實的幸福。
+			
+		a.member(href="./member.html")
+			div.pic
+				img(src='./images/金辰卉.jpg') 
+			div.title 
+				span 金辰卉
+				span.sub 諮商心理師
+			div.txt
+				| 與你一起尋找自己。
+				br
+				| 有些時候，問題本身無法被解決，
+				br
+				| 能夠調整的僅是面對困難時，自我的狀態。
+				br
+				| 和你一起走過人生路上的風景。
+				br
+				| 看見灰暗之處，仍有一絲光明，
+				br
+				| 只是需要陪伴著細心尋找，耐心等待。
+
+		a.member(href="./member.html")
+			div.pic
+				img(src='./images/黃種斌.jpg') 
+			div.title 
+				span 黃種斌
+				span.sub 諮商心理師
+			div.txt
+				| 不論是否有機會陪你走上一段路，
+				br
+				| 想跟你說，在特別難熬的時候，要特別對自己好一些。
+				br
+				| 諮商，可以幫助你辨別哪些痛苦來自於我們過往習慣的思考與心態，
+				br
+				| 學著用新的方式、更有彈性的方式來面對這些艱難的時刻。
+				br
+				| 讓你漸漸地不被過去所困綁，更能活出自己喜歡的樣子。
+				br
+				| 若你願意，期待能與你一起同行。
+
+		a.member(href="./member.html")
+			div.pic
+				img(src='./images/woman.svg') 
+			div.title 
+				span 黃可欣
+				span.sub 諮商心理師
+			div.txt 
+
+		a.member(href="./member.html")
+			div.pic
+				img(src='./images/陳奕維.jpg') 
+			div.title 
+				span 陳奕維
+				span.sub 諮商心理師
+			div.txt 我相信每個人成長的路上，都是用自己的經驗，慢慢長成現在的樣子，這些都沒有問題也沒有對錯，都是自己面對這環境最適合的樣子，希望有幸能走進你的世界，一起陪你走一趟生命之旅。
+
+		a.member(href="./member.html")
+			div.pic
+				img(src='./images/邱盈潔.jpg') 
+			div.title 
+				span 邱盈潔
+				span.sub 諮商心理師
+			div.txt
+				| 生命總是奇妙，
+				br
+				| 永遠不知道昨天的你
+				br
+				| 和明天的你會以什麼方式相遇，
+				br
+				| 邀請今天的你一起思考與感受。
+
+		div.bFooter
+			a.btn(href="./team.html") 更多介紹
+
+//-文章專欄
+mixin column(num)
+	div.columnBox
+		- var n = 0;
+		while n < num
+			div.column(data-loop=n++)
+				div.left
+					div.pic
+						img(src="./images/column-1.jpg")
+				div.right
+					div.date 2023-01-01
+					div.title 文章標題
+					div.txtBox 
+						p.txt 文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容
+					div
+						a.more(href="") 繼續閱讀
+		
+//-聯絡我們
+mixin contactus()
+	div.contactBox
+		div.left
+			iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.3328508850177!2d121.20071001535986!3d24.95478764761548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ba4dfff231%3A0xa7cf1af4fbdf5826!2zMzI05qGD5ZyS5biC5bmz6Y6u5Y2A5paH5YyW6KGXNjbomZ8!5e0!3m2!1szh-TW!2stw!4v1673100675135!5m2!1szh-TW!2stw' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')
+		div.right
+			p ｜上班時間：週一至週五 09:00-21:00
+			p 週六 0900-21:00
+			p ｜聯絡電話：03-4013311
+			p ｜Email：wdcc4013311@gmail.com
+			p ｜官方LINE@ ID： @065ewuqz 
+			p ｜諮商所地址： 桃園市平鎮區文化街66-1號
+			p 諮商所地址：桃園市平鎮區文化街66-1號（鄰近中壢/新屋交流道1分鐘車程，文化國小商圈）
+			p 鄰近停車場：文化公園地下停車場（一小時收費 30 元）

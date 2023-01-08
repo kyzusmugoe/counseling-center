@@ -130,7 +130,7 @@ module.exports = (env, options) => {
         },
         devServer: {
             hot: true,
-            port: 12348
+            port: 12350
         },
         devtool: 'source-map',
         plugins: [

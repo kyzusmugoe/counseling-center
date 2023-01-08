@@ -1,3 +1,31 @@
 //@use "sass:math"
 @mixin service()
+    .rpBox
+        display: flex
+        justify-content: center
+        .rpCard
+            height: 465px
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items:  center
+            background-color: #fff
+            border: 2px solid #BEBEBE
+            border-radius: 20px
+            padding:28px
+            margin: 0 28px
+            position: relative
+            &:nth-child(even)
+                margin-top: 120px
+
+            &:nth-child(1)::before, &:nth-child(3)::before
+                @include  processingLine()
+                right: -58px
+                bottom: -76px
+            
+            &:nth-child(2)::before
+                @include  processingLine()
+                transform: scaleY(-1)
+                right: -58px
+                top: -76px
     

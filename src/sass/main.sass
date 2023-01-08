@@ -2,6 +2,8 @@
 @import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+TC:wght@300&display=swap'
 
 
+
+
 @import './comps/nav'
 @import './comps/banner'
 @import './comps/footer'
@@ -12,6 +14,8 @@
 @import './pages/column'
 @import './pages/contactus'
     
+$mainColor:#DDA869
+$fontColor:#484848
 
 html, body
     font-family: 'Noto Sans TC', sans-serif
@@ -19,9 +23,9 @@ html, body
     height: 100%
 
 .main-container
-    
     width: 100%
-    max-width: 1600px
+    align-items: center
+    //max-width: 1600px
     height: fit-content
     margin: 0 auto
     display: flex
@@ -29,12 +33,30 @@ html, body
     box-shadow: 0 0 3px #aaa
     .block
         display: flex
-        justify-content: center
+        align-content: center
+        flex-direction: column
         width: calc(100% - 160px)
         padding: 0 80px
+        padding-bottom: 90px
+        
         &.y1
-            background-color: rgba(211,168,105,0.12) 
-    
+            background-color: rgba(211,168,105,0.12)
+        .bFooter
+            padding-top: 100px 
+            display: flex
+            justify-content: center
+            
+
+    .btn
+        text-decoration: none
+        padding: 18px 80px
+        color:#fff
+        font-size: 30px
+        font-weight: bold
+        background: rgb(221,168,105)
+        background: linear-gradient(90deg, rgba(221,168,105,1) 0%, rgba(198,127,42,1) 100%)
+        border-radius: 40px
+
     //comps
     @include nav()
     @include banner()

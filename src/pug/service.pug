@@ -6,7 +6,53 @@ html
     body
         div.main-container            
             +nav('service')
-            div.page-index
-                +banner('./images/banner-1.jpg')
-                +process()
+            +thumb('首頁 > 服務項目')
+            div.page-box.service
+                +sub-banner('./images/banner-service.jpg','服務項目')
+                div.block
+                    div.menuList
+                        div.box
+                            div.circle
+                                div.content
+                                    h3 成人
+                                        br
+                                        | 個別心理諮商
+                                    ul 
+                                        li 諮商時間：50分鐘/次
+                                        li 收費：2000-3500元/次               
+                        div.box
+                            div.circle
+                                div.content
+                                    h3 兒童/青少年
+                                        br
+                                        |個別心理諮商
+                                    ul 
+                                        li 諮商時間：50分鐘/次
+                                        li 收費：2000-3500元/次               
+                        div.box
+                            div.circle
+                                div.content
+                                    h3 伴侶/家庭諮商
+                                    ul 
+                                        li 60-90分鐘/次
+                                        li 收費：2000-3500元/次               
+                        div.box
+                            div.circle
+                                div.content
+                                    h3 團體課程
+                                    ul 
+                                        li 團體時間：90分鐘/次
+                                        li 收費：不定               
+                        div.box
+                            div.circle
+                                div.content
+                                    h3 講座/工作坊
+                                    ul 
+                                        li 時間與收費視主題而定
+                    div.bFooter
+                        a.btn(href="https://docs.google.com/forms/d/e/1FAIpQLScNvhS2yqTzdB26SHk0XkajzoAW7-2yfTvVOBCZEEQ9wr2Z7A/viewform")  線上預約             
+                div.block.y1
+                    +process()
+                    div.bFooter
+                        a.btn(href="https://docs.google.com/forms/d/e/1FAIpQLScNvhS2yqTzdB26SHk0XkajzoAW7-2yfTvVOBCZEEQ9wr2Z7A/viewform")  線上預約             
             include ./comps/footer.pug 

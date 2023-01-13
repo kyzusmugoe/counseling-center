@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <g id="Group_1830" data-name="Group 1830" transform="translate(-321 -56)">
+    <g id="Group_1829" data-name="Group 1829">
+      <g id="Group_1828" data-name="Group 1828">
+        <rect id="Rectangle_807" data-name="Rectangle 807" width="34" height="34" rx="7" transform="translate(321 56)" fill="#c4c4c4" opacity="0.745"/>
+        <g id="Menu" transform="translate(295 28)">
+          <rect id="Rectangle_175" data-name="Rectangle 175" width="16" height="16" transform="translate(35 37)" fill="none"/>
+          <path id="Union_4" data-name="Union 4" d="M0,14V12H16v2ZM0,8V6H16V8ZM0,2V0H16V2Z" transform="translate(35 38)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

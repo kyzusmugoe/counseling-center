@@ -6,7 +6,7 @@ html
     body
         div.main-container            
             +nav()
-            div.page-index
+            div.page-box.index
                 +banner('./images/banner-1.jpg')
                 div.block 
                     div.blocktitle 
@@ -20,29 +20,27 @@ html
                             div.time 2023-01-10
                             div.txt 「心設計心理諮商所」即將開幕大家好，我們是桃園中壢成立的心設計心理諮商所。「心設計」是一家全人設計規劃的心理諮商所，一樓設計為兒童青少年心理發展服務，二樓規劃為成人心理諮商服務。期待透過空間的量身設計，能夠提供社區民眾容易親近的諮商服務，協助來訪者經營好關係、情緒、以及打造心之所向的生活。為了確保可以提供給來訪者舒適專業的服務，我們也期許自己能夠提供合作的夥伴一個穩定、受尊重的工作環境，讓心理師能夠專注在專業工作上，陪伴來訪者共同從心設計美好生活。
 
-                div.block
+                div.block.y1
                     +title('預約流程', 'RESERVATION PROCESS')
-                    div
-                        +process()
+                    +process()
                     div.bFooter
                         a.btn(href="./service.html") 線上預約
 
                 div.block
                     +title('專業團隊', 'OUR TEAM')
-                    div
-                        +team()
+                    +team()
+                    div.bFooter
+                        a.btn(href="./team.html") 更多介紹 
 
                 div.block.y1
                     +title('文章專欄', 'COLUMN')
-                    div
-                        +column(4)
+                    +column(4)
                     div.bFooter
                         a.btn(href="./column.html") 更多文章 
                 
                 div.block
                     +title('聯絡我們', 'CONTACT US')
-                    div
-                        +contactus()
+                    +contactus()
 
             include ./comps/footer.pug 
                     

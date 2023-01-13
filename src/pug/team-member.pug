@@ -1,0 +1,50 @@
+//-公用組件
+include ./comps/components.pug
+doctype html
+html
+    include ./comps/header.pug
+    body
+        div.main-container.notB 
+            +nav('team')
+            +thumb('首頁 > 專業團隊 > 心設計心理所長 何維峰')
+            div.page-box.team-member
+                div.block
+                    div.member-card
+                        div.head
+                            div.pic
+                                img(src='./images/何維峰.jpg') 
+                            div.info
+                                h2.name 何維峰
+                                h4.title 心設計心理所長
+                                p.sn 諮心證字第003605號
+                        div.row
+                            div.label 學歷
+                            div.content 國立臺北教育大學 心理與諮商學系研究所
+                        div.row
+                            div.label 現職
+                            div.content 
+                                ul
+                                    li ．心園心理治療所 兼任諮商心理師
+                                    li ．格瑞思心理諮商所 兼任諮商心理師
+                                    li ．台北市立建國中學特約心理師
+                                    li ．基隆市學生輔導諮商中心 兼任諮商心理師
+                                    li ．桃園市教育局幼教情緒教育培訓講師
+                                    li ．平溪國中特約心理師
+                                    li ．校園輔導知能研習講師
+                                    li ．台視「伴我成長」親職教育節目製作人
+
+                        div.row
+                            div.label 諮商專長
+                            div.content 
+                                ul 
+                                    li ※兒童/青少年：遊戲治療、主題式治療/發展團體情緒困擾、特殊生之適應困擾（ADHD、自閉症、亞斯伯格、情緒障礙等）、拒（懼）學、霸凌創傷、人際問題、生涯迷惘、網路成癮
+                                    li ※家庭：親子關係、家長壓力管理、家庭衝突、伴侶關係、親職/心理衛教
+                                    li ※校園：師生衝突、親師溝通、教師舒壓（支持）、危機處理、校園系統合作（個案處遇安置計劃）
+
+                        div.row
+                            div.label 諮商方式
+                            div.content 
+                                p 因緣際會，從一個「伴我成長」親職教育節目，開展起二十多年的兒童青少年工作。長期在社區與學校系統服務，服務兒童、青少年、家庭系統及學校機構，參與兒童與青少年團體治療服務，規劃及帶領兒少生態身心體驗與冒險。熟悉與系統合作相關議題，擅長與家長、家庭系統以及老師與學校系統合作。近年，拓展學齡前幼兒發展評估、親職教育團體研究設計與帶領（雙軌融合親子技能團體）與兒少情緒發展培訓工作。
+                div.bFooter
+                    a.btn(href="./service.html") 線上預約
+            include ./comps/footer.pug 

@@ -10,49 +10,207 @@
     background-color: #D2076F
 
 @mixin nav()
-    .nav
-        width: 100%
-        max-width: 1600px
-        height:210px
+    $fixNavHeight:140px
+    .nav-container
         display: flex
-        justify-content: space-between
-        align-items: center
+        justify-content: center
+        width: 100%
+        height: fit-content
+        background-color: #fff
+        box-shadow: 0 8px 8px rgba(0, 0, 0, .3)
+        z-index: 10000       
+        
+        .nav 
+            width: 100%
+            max-width: 1600px
+            height:210px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            transition: .4s
+            @include lg
+                height:70px
+           
+                
 
-        .left
-            flex:0 1 auto
-            padding: 0px 20px 0px 20px
-            .logo
-                width:100%
-                max-width: 395px
-                object-fit: cover
-        .right
-            flex:0 0 auto
-            padding: 24px 20px 0px 20px
-            @media screen and (max-width:1400px) 
-                padding-bottom: 0px
-            .menu
-                @media screen and (max-width:768px) 
+            @keyframes fall
+                from
+                    transform: translateY(-100%)
+                to
+                    transform: translateY(0)
+
+            .left
+                flex:0 1 auto
+                padding: 0px 20px 0px 20px
+                .logo
+                    object-fit: cover
+                    width: 395px
+                    @include xxxl
+                        width: 320px
+                    @include xxl
+                        width:250px
+                    @include lg
+                        width:120px
+                    
+            .right
+                flex:1 0 auto
+                padding: 24px 20px 0px 20px
+                @include lg
+                    padding: 0px 20px
+
+                .mHead
                     display: none
-                a
-                    font-size: 24px
-                    @media screen and (max-width:1400px) 
-                        font-size: 21px
-                    color:#333
-                    text-decoration: none
-                    padding:10px 18px
-                    position: relative
-                    &:hover
-                        transition: .4s
-                        color:#D2076F
-                        //@include underline()
-                        
-                    &.on::after
-                        @include underline()
+                    
+                @include md
+                    padding-bottom: 0px
+                
+                
+                .menu
+                    z-index: 100
+                    display: flex  
+                    justify-content: flex-end
+                    .list
+                        display: flex
+                    a
+                        font-size: 24px
 
-                    &.btn
-                        color:#fff
-                        background-color: #DDA869
-                        border-radius: 30px
+                        @include xxxl
+                            font-size: 21px
+                        @include xl
+                            font-size: 18px
+                        @include md 
+                            font-size: 21px
+
+                        color:#333
+                        text-decoration: none
+                        padding:10px 18px
+                        @include xl
+                            padding:10px 10px
+                        position: relative
+                        &:hover
+                            transition: .4s
+                            color:#D2076F
+                            //@include underline()
+                            
+                        &.on::after
+                            @include underline()
+
+                        &.btn
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            color:#fff
+                            background-color: #DDA869
+                            border-radius: 30px
+                            padding:10px 24px
+                            margin-left: 20px
+                            font-weight: 400 
+                            width: 150px
+                    //mobile menu 手機選單樣式                 
+                    @include lg
+                    
+                        justify-content: flex-start
+                        position: fixed
+                        $mSpace:50px
+                        width: calc( 250px + $mSpace )
+                        height: 100%                    
+                        flex-direction: column
+                        right: -300px
+                        z-index: -1
+                        top:0
+                        background-color: #fff
+                        opacity: 0
+                        transition: .4s  
+                        pointer-events: none 
                         
-                        padding:10px 24px
-                        margin-left: 20px
+                        &::before
+                            position: absolute
+                            content: ''
+                            width: 1000%
+                            height: 4000px
+                            top:0
+                            right: calc( 250px + $mSpace)
+                            content: ''
+                            background-color: rgba(0, 0, 0, .6)
+                        .list
+                            flex-direction: column   
+                            overflow-y: auto
+                            a
+                                border-bottom: 1px solid #BEBEBE
+                                margin:0 $mSpace 20px $mSpace 
+                                padding:0 0 15px 0
+                            a.btn
+                                padding:10px 24px
+                            a.on::after
+                                height: 0
+                            
+                        //手機板頁面的啟動
+                        &.on
+                            opacity: 1                    
+                            z-index: 10000
+                            right: 0
+                            pointer-events: auto 
+                            
+                        .mHead
+                            display: flex
+                            padding: 20px 30px
+                            align-items: center
+                            justify-content: space-between
+                            img
+                                width: 100%
+                            a 
+                                border: none
+                                width: 120px
+                            .logo
+                                margin-left: -20px
+                            .close
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                width: 20px
+                                height: 20px
+                                padding: 10px
+                                border-radius: 10px
+                                background-color: #BEBEBE
+                    
+                    @keyframes menuIn
+                        from                        
+                            opacity: 0
+                        to
+                            opacity: 1
+
+                    
+                .mMenuOpen
+                    display: none
+                    @include lg
+                        display: flex
+                        justify-content: flex-end
+
+        &.fix
+            position: fixed
+            top:0
+            animation-name: fall
+            animation-duration: .4s
+            
+            
+
+                /*
+                    position: inherit
+                    animation: none
+            .nav
+                height: $fixNavHeight
+                @include lg
+                    height: 70px
+                .left
+                    .logo
+                        width: 280px
+                        @include xxxl
+                            width: 250px 
+                        @include lg
+                            width: 120px  
+
+    &:has(> .nav-container.fix)
+        margin-top: $fixNavHeight
+        @include lg
+            margin-top: 0 
+        

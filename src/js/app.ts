@@ -23,3 +23,30 @@ export const ParallaxScrolling = () => {
         });
     }
 }
+
+export const PopImage = (targetClass:string) => {
+    document.addEventListener("DOMContentLoaded",()=>{   
+        const pop: HTMLElement = document.querySelector("#pop") as HTMLElement
+        const popImg: HTMLImageElement = document.querySelector("#popImage") as HTMLImageElement
+        const targets:NodeList = document.querySelectorAll(`.${targetClass}`) 
+        
+        if(targets.length>0){
+            targets.forEach((item) => {
+                item.addEventListener("click", event => {
+                    const _t: HTMLElement = event.target as HTMLElement
+                    const  _src:string =  _t.dataset.popsrc as string
+                    var img = new Image()
+                    img.src = _src        
+                    img.onload = ()=>{
+                        pop.classList.add('on')
+                        popImg.src = _src
+                    }          
+                });
+            })
+            
+            pop.addEventListener("click", () => {
+                pop.classList.remove('on')
+            })
+        }
+    })
+}

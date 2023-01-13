@@ -4,24 +4,61 @@
         font-weight: 300
         width: 100%
         font-size: 24px
+        @include xxxl
+            font-size: 18px
+        @include md
+            font-size: 15px
         padding:70px 0
         color:#fff
         display: flex
         justify-content: center
+        @include xl
+            align-items: center
+            flex-direction: column
         background-color: #5D6055
         .box
             &.b1
                 flex: 0 1 600px
+                
+                @include xl
+                    flex: 0 1 300px
+                    border-bottom: 1px solid #fff
+                    margin-bottom: 50px
                 display: flex
                 flex-direction: column
                 align-items: center
+                @include md
+                    flex: 0 1 auto
+                    padding-bottom: 30px
+                    margin-bottom: 30px
                 img
                     width: 360px
                     margin-right: 60px
+                    @include xxxl
+                        width: 300px
+                        margin-right: 0
+                    @include md
+                        width: 240px
             &.b2
                 flex: 0 1 600px
+                @include xl
+                    text-align: center
+                    flex: 0 1 300px
+                    border-bottom: 1px solid #fff
+                    margin-bottom: 50px
+                    .title
+                        display: none
+                @include md
+                    flex: 0 1 auto
+                    padding-bottom: 30px
+                    margin-bottom: 30px
             &.b3
                 flex: 0 1 300px
+                @include xl
+                    text-align: center
+                    flex: 0 1 120px
+                    .title
+                        display: none
             .title
                 font-weight: 500
                 font-size: 32px
@@ -38,10 +75,10 @@
                 margin: 10px
     footer
         color:#707070
-        font-size: 24px
+        font-size: 18px
+        @include lg
+            font-size: 15px
         padding: 40px 0 100px 0
         text-align: center
-        @media screen and (max-width:1200px)             
-            font-size: 18px
 
         

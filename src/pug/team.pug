@@ -6,8 +6,9 @@ html
     body
         div.main-container            
             +nav('team')
-            div.team
-                +banner('./images/banner-1.jpg') 
-                div.block               
+            +thumb('首頁 > 專業團隊')
+            div.page-box.team
+                +sub-banner('./images/banner-team.jpg','心設計的專業團隊')
+                div.block.p100               
                     +team()
             include ./comps/footer.pug 

@@ -1,4 +1,16 @@
+//-公用組件
+include ./comps/components.pug
 doctype html
 html
     include ./comps/header.pug
-    div.blocker hi
+    body
+        div.main-container            
+            +nav('contactus')
+            +thumb('首頁 > 聯絡我們')
+            div.page-box.contactus
+                +sub-banner('./images/banner-contactus.jpg', '聯絡我們')
+                div.block
+                    +contactus()
+
+            include ./comps/footer.pug 
+                    

@@ -6,8 +6,10 @@ html
     body
         div.main-container            
             +nav('column')
-            div.page-index
-                +banner('./images/banner-1.jpg')
-                +column(6)
+            +thumb('首頁 > 文章專欄')
+            div.page-box.column
+                +sub-banner('./images/banner-column.jpg','文章專欄')
+                div.block
+                    +column(6)
             include ./comps/footer.pug 
                     

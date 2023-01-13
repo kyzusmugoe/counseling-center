@@ -1,12 +1,11 @@
 @import 'https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700&display=swap&subset=chinese-traditional'
-@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+TC:wght@300&display=swap'
+@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+TC:wght@300&display=swap&family=Poppins:wght@300;400;500;600;700;800;900&display=swap'
 
-
-
-
+@import './comps/pop'
 @import './comps/nav'
 @import './comps/banner'
 @import './comps/footer'
+
 @import './pages/index'
 @import './pages/about'
 @import './pages/team'
@@ -16,6 +15,31 @@
     
 $mainColor:#DDA869
 $fontColor:#484848
+$maxWidth:1600px
+
+@mixin xxxl
+    @media(max-width:1920px)
+        @content
+
+@mixin xxl
+    @media(max-width:1440px)
+        @content
+
+@mixin xl
+    @media(max-width:1280px)
+        @content
+
+@mixin lg
+    @media(max-width:992px)
+        @content
+
+@mixin md
+    @media(max-width:768px)
+        @content
+
+@mixin sm
+    @media(max-width:414px)
+        @content
 
 html, body
     font-family: 'Noto Sans TC', sans-serif
@@ -31,33 +55,118 @@ html, body
     display: flex
     flex-direction: column
     box-shadow: 0 0 3px #aaa
+    
+    .page-box
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
     .block
         display: flex
-        align-content: center
         flex-direction: column
+        align-items: center
         width: calc(100% - 160px)
-        padding: 0 80px
-        padding-bottom: 90px
+        padding: 0 80px 90px 80px
+        @include  md
+            width: calc(100% - 40px)
+            padding: 0 20px 80px 20px
         
         &.y1
             background-color: rgba(211,168,105,0.12)
         .bFooter
             padding-top: 100px 
+            @include  md
+                padding-top: 10px 
             display: flex
             justify-content: center
-            
+    
+    .thumbBox
+        z-index: 1000
+        width: calc( 100% - 120px)
+        max-width: $maxWidth
+        position: absolute
+        top: 270px
+        padding: 0 60px
+        color: #fff
+        font-size: 24px
+        font-weight: 300
+        @include xxxl
+            font-size: 18px
+        @include lg
+            font-size: 18px
+            top: 340px
+            padding:0 38px    
+            width: calc( 100% - 76px)
+            color: #000
+    &.notB
+        .thumbBox
+            color:#000
+            top: 240px
+            @include lg
+                top: 80px 
+    
+    &.sb
+        .thumbBox
+            color:#000
+            @include lg
+                top: 360px 
+
+    .bFooter
+        display: flex
 
     .btn
         text-decoration: none
-        padding: 18px 80px
-        color:#fff
         font-size: 30px
+        padding: 18px 80px
+        @include xxxl
+            font-size: 30px
+            padding: 12px 60px
+
+        color:#fff
         font-weight: bold
         background: rgb(221,168,105)
-        background: linear-gradient(90deg, rgba(221,168,105,1) 0%, rgba(198,127,42,1) 100%)
         border-radius: 40px
+        position: relative
+        overflow: hidden
+        &::before  
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            background: linear-gradient(0deg, rgba(233,173,255, 0) 50%, rgba(241, 206, 164, 1) 100%)
+            width: 100%
+            height: 100%
+        &:hover
+            transition: .4s
+            background: rgb(228, 186, 135)
+            //background: linear-gradient(90deg, rgb(241, 206, 164) 0%, rgb(233, 173, 173) 100%)
+    
+    //loading
+    .banner-container
+        position: relative   
+        &::before            
+            z-index: 0
+            color:#fff
+            position: absolute
+            top: 70%
+            left: calc(50% - 25px)
+            width: 50px
+            height: 50px
+            content: url(./../images/spinner-solid.svg)
+            animation-name: loadingAnim
+            animation-duration: 1s
+            animation-iteration-count: infinite 
 
+
+    @keyframes loadingAnim
+        from
+            transform: rotate(0deg)
+        to
+            transform: rotate(360deg)
+            
     //comps
+    @include pop()
     @include nav()
     @include banner()
     @include footer()

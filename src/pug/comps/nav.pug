@@ -1,33 +1,45 @@
-div.nav
-    div.left
-        a(href="./index.html") 
-            img.logo(src="./images/logo.png")
-    div.right
-        div.menu
-            //------------------------------------
-            if page=="about"
-                a.on(href="./about.html") 關於新設計
-            else
-                a(href="./about.html") 關於新設計
-            //------------------------------------
-            if page=="team"
-                a.on(href="./team.html") 專業團隊
-            else
-                a(href="./team.html") 專業團隊
-            //------------------------------------
-            if page=="service"
-                a.on(href="./service.html") 服務項目
-            else
-                a(href="./service.html") 服務項目
-            //------------------------------------
-            if page=="column"
-                a.on(href="./column.html") 文章專欄
-            else
-                a(href="./column.html") 文章專欄
-            //------------------------------------
-            if page=="contactus"
-                a.on(href="./contactus.html") 聯絡我們
-            else
-                a(href="./contactus.html") 聯絡我們
-            //------------------------------------
-            a.btn 線上預約
+div.nav-container
+    div.nav
+        div.left
+            a(href="./index.html") 
+                img.logo(src="./images/logo.png")
+        div.right
+            div.mMenuOpen
+                img(src="./images/m-menu.svg", alt="")
+            div.menu
+
+                div.mHead
+                    a(href="./index.html")
+                        img.logo(src="./images/logo.png")
+                    div
+                        div.close
+                            img(src="./images/close.svg")
+
+                div.list
+                    //------------------------------------
+                    if page=="about"
+                        a.on(href="./about.html") 關於心設計
+                    else
+                        a(href="./about.html") 關於心設計
+                    //------------------------------------
+                    if page=="team"
+                        a.on(href="./team.html") 專業團隊
+                    else
+                        a(href="./team.html") 專業團隊
+                    //------------------------------------
+                    if page=="service"
+                        a.on(href="./service.html") 服務項目
+                    else
+                        a(href="./service.html") 服務項目
+                    //------------------------------------
+                    if page=="column"
+                        a.on(href="./column.html") 文章專欄
+                    else
+                        a(href="./column.html") 文章專欄
+                    //------------------------------------
+                    if page=="contactus"
+                        a.on(href="./contactus.html") 聯絡我們
+                    else
+                        a(href="./contactus.html") 聯絡我們
+                    //------------------------------------ 
+                    a.btn(href="https://docs.google.com/forms/d/e/1FAIpQLScNvhS2yqTzdB26SHk0XkajzoAW7-2yfTvVOBCZEEQ9wr2Z7A/viewform" target='_black') 線上預約

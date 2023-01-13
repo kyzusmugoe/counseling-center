@@ -1,30 +1,47 @@
 //@use "sass:math"
 @mixin column()
     .columnBox
-        .column
+        max-width: $maxWidth
+        .columnItem
             display: flex
-            @media screen and (max-width:768px)
+            width: 100%
+            max-width: 1400px
+            @include xl
                 flex-direction: column
             background-color: #fff                
             margin-bottom: 50px
             border:2px solid #bebebe
             border-radius: 30px
             font-size:24px
+            @include xxxl
+                font-size:18px
+            @include md
+                font-size:18px
             font-weight: 300
             .left
                 display: flex
                 justify-content: center
                 padding: 32px
-                flex: 0 0 calc(35% - 64px)
+                flex: 0 0 calc(30% - 64px)
+                @include xxxl
+                    padding: 21px
+                    flex: 0 0 calc(25% - 42px)
+                @include md
+                    padding: 16px
                 .pic
                     display: flex
                     justify-content: center
                     align-items: center
                     width: 440px
                     height: 280px
-                    @media screen and (max-width:1600px)
+                    @include xxxl
+                        width: 360px
+                        height: 210px
+                    @include xxl
                         width: 330px
                         height: 210px
+                    @include xl
+                        width: 100%
 
                     //max-width: 440px
                     border-radius: 20px
@@ -32,23 +49,37 @@
                     img
                         transition: 1s
                         width: 100%
+                        @include md
+                            width: 120%
                         object-fit: cover
 
             .right
                 padding: 32px
-                flex: 0 0 calc(65% - 64px)
+                width: 100%
+                flex: 0 1 auto
+                @include xxxl
+                    width: calc(100% - 42px)
+                    padding: 21px
                 .date
                     margin-bottom: 20px
+                    @include xxxl
+                        margin-bottom: 12px
                 .title
                     font-size:30px
                     margin-bottom: 60px
+                    @include xxxl
+                        margin-bottom: 30px
+                        
                 .txtBox
                     margin-bottom: 50px
+                    @include xxxl
+                        margin-bottom: 30px
                     .txt
                         width: 100%
+                        max-width: calc(100% - 42px)
                         display: -webkit-box
                         -webkit-box-orient: vertical
-                        -webkit-line-clamp: 4
+                        -webkit-line-clamp: 5
                         overflow: hidden
 
                 a.more,.date
@@ -58,4 +89,52 @@
                     img
                         width: 110%
 
+    .column
+        .block
+            .columnBox
+                max-width: 1600px 
+                margin-top: 64px
     
+    /*
+        &:has(.column-detail)
+            .nav
+                border-bottom: 1px solid #707070
+            
+    .column-detail
+        .banner-container.sub
+            margin-top: 150px 
+            @include lg
+                margin-top: 0 
+            height: 320px
+            @include xxxl
+                height: 260px
+            .textBox 
+                .title
+                    padding: 0 20px
+                    max-width: calc( 100% - 40px )
+                    max-width: 500px
+                    font-size: 36px
+                    @include xxxl
+                        font-size: 32px
+                    @include md
+                        font-size: 28px
+        section
+            font-weight: 300
+            margin-top: 120px
+            max-width: $maxWidth
+            font-size: 24px
+            @include xxxl
+                font-size: 18px
+            .date
+                font-weight: 600
+                color: $mainColor
+                border-bottom: 1px solid #BEBEBE
+                padding-bottom: 36px
+                margin-bottom: 36px
+            h4
+                margin: 0
+                margin-bottom: 16px
+            a
+                color:#333
+                font-weight: 600px 
+                

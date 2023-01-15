@@ -56,6 +56,7 @@ html, body
     flex-direction: column
     box-shadow: 0 0 3px #aaa
     
+    //scroll-behavior: smooth
     .page-box
         width: 100%
         display: flex
@@ -156,7 +157,56 @@ html, body
             content: url(./../images/spinner-solid.svg)
             animation-name: loadingAnim
             animation-duration: 1s
-            animation-iteration-count: infinite 
+            animation-iteration-count: infinite
+            transform: scale(0)
+            transition: .4s
+    
+    .banner-container:has( div.bannerBox[style*='display: none'])
+        &::before
+            width: 100px
+            transform: scale(0)
+
+    //右下角工具箱
+    .toolBox
+        display: none
+        flex-direction: column
+        width: fit-content
+        position: fixed
+        right: 0
+        bottom: 0
+        &.on
+            display: flex
+        a
+            width: 30px
+            height: 30px
+            margin: 10px
+            padding: 10px
+            @include lg
+                width: 25px
+                height: 25px
+                padding: 5px
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, .3)
+            background-color: $mainColor
+            border-radius: 50%
+            animation-name: toolBoxItemAnim 
+            animation-fill-mode: forwards 
+            animation-duration: .4s
+            opacity: 0
+            @for $i from 1 through 10 
+                &:nth-child( #{$i}) 
+                    animation-delay: #{.1 * $i}s
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+    @keyframes toolBoxItemAnim
+        from
+            opacity: 0
+            transform: translateY(-30px) 
+        to
+            opacity: 1
+            transform: translateY(0px)
 
 
     @keyframes loadingAnim

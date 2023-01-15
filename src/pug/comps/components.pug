@@ -197,13 +197,16 @@ mixin contactus()
 						| 週六 0900-21:00
 				div.row
 					div.label ｜聯絡電話
-					div.txt 03-4013311
+					div.txt.high 03-4013311
 				div.row
 					div.label ｜Email
-					div.txt wdcc4013311@gmail.com
+					div.txt 
+						a(href="mailto:@wdcc4013311@gmail.com") @065ewuqz 
+						
 				div.row
 					div.label ｜官方LINE@ ID
-					div.txt @065ewuqz 
+					div.txt.high 
+						a(href="https://lin.ee/qllzpsF") @065ewuqz 
 				div.row
 					div.label ｜諮商所地址
 					div.txt 桃園市平鎮區文化街66-1號
@@ -212,3 +215,13 @@ mixin contactus()
 				div.row
 					div.label ｜鄰近停車場
 					div.txt 文化公園地下停車場（一小時收費 30 元）
+
+//-右下角的工具箱
+mixin toolBox()
+	div.toolBox
+		a(href="https://lin.ee/qllzpsF" target='_black')
+			img.icon(src='./images/icon-line-w.svg')
+		a(href="https://www.facebook.com/profile.php?id=100088215491511" target='_black')
+			img.icon(src='./images/icon-fb-w.svg' )
+		a.gotoTop
+			img.icon(src='./images/up-long-solid.svg' )

@@ -93,33 +93,42 @@ if(boxes.length>0){
     })    
 }
 
-//nav 隨著滑動固定版面
+//nav 隨著滑動固定版面+工具列的顯示
 const nav  = document.querySelector('.nav-container') as HTMLDivElement
+const toolBox  = document.querySelector('.toolBox') as HTMLDivElement
 document.addEventListener('scroll', ()=>{
     if(window.scrollY > nav.offsetHeight){
         nav.classList.add('fix')
+        toolBox.classList.add('on')
     }else{
         nav.classList.remove('fix')
+        toolBox.classList.remove('on')
     }    
 })
 
+const gotoTop  = document.querySelector('.gotoTop') as HTMLLinkElement
+gotoTop.addEventListener('click', ()=>{
+    window.scrollTo(
+        {
+            top: 0,
+            behavior: 'smooth',
+        }
+    );
+    nav.classList.add('fix')
+    toolBox.classList.add('on')
+})
+
+
 //img loader
 const imgs:NodeList = document.querySelectorAll(".loading") as NodeList
-
 if(imgs.length>0){
     imgs.forEach(item=>{
         const box:HTMLElement = item as HTMLElement
         const img = new Image()
         img.src = box.dataset.loading as string
-        box.style.display = 'none'
-        
+        box.style.display = 'none'        
         img.addEventListener('load',()=>{
-            box.style.display = 'block'
+            box.style.display = 'block'            
         })
-        /*
-        img.onload=()=>{
-            alert('complete')
-        }
-        */
     })
 }
